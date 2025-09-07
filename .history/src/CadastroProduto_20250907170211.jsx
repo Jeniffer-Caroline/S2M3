@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import './styles/CadastroProduto.css';
+import './CadastroProduto.css';
 
 export default function CadastroProduto() {
   const [nome, setNome] = useState('');

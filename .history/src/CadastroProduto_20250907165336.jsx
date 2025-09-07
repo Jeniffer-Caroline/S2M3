@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function CadastroProduto() {
+export default function CadastroProduto() {
   const [nome, setNome] = useState('');
   const [preco, setPreco] = useState('');
   const [descricao, setDescricao] = useState('');
@@ -13,7 +13,7 @@ function CadastroProduto() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        constresponse = await axios.post('http://localhost:3001/produtos', {
+         await axios.post('http://localhost:3001/produtos', {
             nome: nome,
             preco: parseFloat(preco),
             descricao: descricao,
@@ -21,6 +21,7 @@ function CadastroProduto() {
         });
         setSuccess('Produto cadastrado com sucesso!');
         setError(null);
+        // eslint-disable-next-line no-unused-vars
         } catch (err) {
         setError('Erro ao cadastrar produto. Tente novamente.');
         setSuccess(null);
@@ -31,9 +32,10 @@ return (
     <div>
         <h1>Cadastro de Produto</h1>
         <form onSubmit={handleSubmit}>
-            <label htmlFor={handleSubmit}>
+            <label htmlFor="nome">
                 Nome do produto:
                 <input
+                    id='nome'
                     type="text"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}

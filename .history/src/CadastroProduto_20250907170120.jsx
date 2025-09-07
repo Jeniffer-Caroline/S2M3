@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import './styles/CadastroProduto.css';
 
 export default function CadastroProduto() {
   const [nome, setNome] = useState('');
@@ -32,8 +31,8 @@ export default function CadastroProduto() {
 return (
     <div className='cadastro-produto'>
         <h1>Cadastro de Produto</h1>
-        <form className='cadastro-form' onSubmit={handleSubmit}>
-            <label className='cadastro-label' htmlFor="nome">
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="nome">
                 Nome do produto:
                 <input
                     id='nome'
