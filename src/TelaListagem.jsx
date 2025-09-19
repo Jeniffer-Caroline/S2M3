@@ -15,6 +15,18 @@ const Produto = () => {
             });
     }, []);
 
+    const handleDelete = (id) => {
+        if(window.confirm('Tem certeza que deseja excluir este produto?')) {
+        axios.delete(`http://localhost:3001/produtos/${id}`)
+            .then(() => {
+                setProdutos(produtos.filter(produto => produto.id !== id));
+            })
+            .catch(error => {
+                console.error('Erro ao excluir produto:', error);
+            });
+    }
+    };
+
     return (
         <div>
             {produtos.map(produto => (
@@ -23,8 +35,8 @@ const Produto = () => {
                             <p>Preço: R$ {produto.preco}</p>
                             <p>Descrição: {produto.descricao}</p>
                             <img src={produto.imagemUrl} alt={produto.nome} />
-                            <button>Editar</button>
-                            <button>Excluir</button>
+                            <button onClick={() => ondeviceorientationabsolute(produto)}>Editar</button>
+                            <button onClick={() => handleDelete(produto.id)}>Excluir</button>
                         </div>
                     ))}
         </div>
