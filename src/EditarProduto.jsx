@@ -67,4 +67,8 @@ export default function EditarProduto() {
             </form>
         </div>
     );
+ CampoPesquisa
 }
+
+}
+ main

@@ -10,6 +10,30 @@
 
   }
 
+ CampoPesquisa
+.card h2 {
+    margin: 10px 0 5px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+.card p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #333;
+}
+.pesquisa input {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 1em;
+}   
+
   .produto-card {
     background-color: white;
     border: 1px solid #ddd;
@@ -20,6 +44,7 @@
     transition: transform 0.2s;
     border-radius: 10px;
   }
+ main
 
     .produto-card:hover {
         transform: translateY(-5px);
