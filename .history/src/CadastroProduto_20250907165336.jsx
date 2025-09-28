@@ -6,7 +6,7 @@ export default function CadastroProduto() {
   const [nome, setNome] = useState('');
   const [preco, setPreco] = useState('');
   const [descricao, setDescricao] = useState('');
-  const [imagemUrl, setImagemUrl] = useState('');
+  const [imagem, setImagem] = useState('');
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
 
@@ -17,7 +17,7 @@ export default function CadastroProduto() {
             nome: nome,
             preco: parseFloat(preco),
             descricao: descricao,
-            imagemUrl: imagemUrl
+            imagem: imagem
         });
         setSuccess('Produto cadastrado com sucesso!');
         setError(null);
@@ -60,12 +60,12 @@ return (
                 />
             </label>
             <br />
-            <label htmlFor="imagemUrl">
-                Imagem URL:
+            <label htmlFor="imagem">
+                Imagem:
                 <input
                     type="text"
-                    value={imagemUrl}
-                    onChange={(e) => setImagemUrl(e.target.value)}
+                    value={imagem}
+                    onChange={(e) => setImagem(e.target.value)}
                 />
             </label>
             <br />
