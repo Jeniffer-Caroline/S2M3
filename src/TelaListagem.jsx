@@ -36,14 +36,14 @@ const Produto = () => {
     return (
         
         <div>
-            <h1 className='titulo'>Lista de Produtos</h1>
+            <h1 className='titulo'>Lista de Produtos</h1> 
             <div className="pesquisa">
-                <input type="text" placeholder="Pesquisar" value={filtro} onChange={e => setFiltro(e.target.value)} />
+            <input type="text" placeholder="Pesquisar" value={filtro} onChange={e => setFiltro(e.target.value)} />
             </div>
             {produtosFiltrados.map(produto => (
                 <div key={produto.id} className="card">
-                            <h2>{produto.nome}</h2>
-                            <p>Preço: R$ {produto.preco}</p>
+                    <h2>{produto.nome}</h2>
+                    <p>Preço: R$ {produto.preco}</p>
                             <p>Descrição: {produto.descricao}</p>
                             <img src={produto.imagemUrl} alt={produto.nome} />
                             <button onClick={() => ondeviceorientationabsolute(produto)}>Editar</button>
